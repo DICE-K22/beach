@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  get 'reviews/index'
   root to: "reviews#index"
+  resources :reviews, only: [:index, :new, :create]
 end

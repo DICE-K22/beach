@@ -20,7 +20,67 @@
     <h2 class= "content-title">
     Reviews
     </h2>
+    <% @reviews.each do |review| %>
     <li class='list'>
+      <%= link_to '#' do %>
+        <div class='review-info'>
+          <h3 class='review-title'>
+            <%= review.title %>
+          </h3>
+          <div class='review-place'>
+            <span><%= review.place %></span>
+          </div>
+          <div class='review-date'>
+             <span><%= review.date_of_visiting%></span>
+          </div>
+          <div class= "review-pros">
+            <span>Pros: <%= review.pros %></span>
+          </div>
+           <div class= "review-cons">
+            <span>Cons: <%= review.cons %></span>
+          </div>
+          <div class='review-type-of-visitor'>
+            <span>Type of Visitor: <%= review.type_of_visitor.name %></span>
+          </div>
+          <div class='review-type-of-beach'>
+             <span>Type of Beach: <%= review.type_of_beach.name %></span>
+          </div>
+          <div class= "review-color-of-sand">
+            <span>Color of Sand: <%= review.color_of_sand.name %></span>
+          </div>
+           <div class= "review-cleanleness">
+            <span>Cleanliness: <%= review.cleanliness.name %></span>
+          </div>
+          <div class='review-transparency'>
+            <span>Transparency: <%= review.transparency.name %></span>
+          </div>
+          <div class='review-quietness'>
+             <span>Quietness: <%= review.quietness.name %></span>
+          </div>
+          <div class= "review-crowd">
+            <span>Clowd: <%= review.crowd.name %></span>
+          </div>
+           <div class= "review-street-vendor">
+            <span>Street Vendor: <%= review.street_vendor.name %></span>
+          </div>
+          <div class='review-shop'>
+            <span>Shop: <%= review.shop.name %></span>
+          </div>
+          <div class='review-toilet'>
+             <span>Toilet: <%= review.toilet.name %></span>
+          </div>
+          <div class= "review-shower">
+            <span>Shower: <%= review.shower.name %></span>
+          </div>
+           <div class= "review-recommended">
+            <span>Recommended: <%= review.recommended.name %></span>
+          </div>
+          <%= image_tag review.image.variant(resize: '600x600'), class: 'review-image' if review.image.attached? %>
+        </div>
+      <% end %>
+    </li>
+    <% end %>
+        <li class='list'>
       <%= link_to '#' do %>
         <div class='review-info'>
           <h3 class='review-title'>
@@ -74,7 +134,7 @@
            <div class= "review-recommended">
             <span>Recommended: ★★★★★</span>
           </div>
-          <%#<%= image_tag "#", class: "item-img" %>
+          <%= image_tag "test.jpg", class: "item-img" %>
         </div>
       <% end %>
     </li>

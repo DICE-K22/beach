@@ -46,3 +46,10 @@
   text-decoration: none;
   padding: 15px 20px;
 }
+
+.post {
+  border: 1px solid yellow;
+  margin-right: 10px;
+  text-decoration: none;
+  padding: 15px 20px;
+}
