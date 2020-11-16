@@ -1,0 +1,15 @@
+.show-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.show-title {
+  background-color: skyblue;
+  width: 100vw;
+  font-size: 20px;
+  text-align: center;
+}
+.comment-container {
+  
+}
