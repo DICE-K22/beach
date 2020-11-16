@@ -1,0 +1,46 @@
+.review-contents {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.write-review-main {
+}
+
+.main-title {
+  background-color: skyblue;
+  text-align: center;
+  font-size: 40px;
+}
+
+.review-title {
+  font-size: 16px;
+}
+
+.indispensable {
+  color: red;
+}
+
+.review-title-text {
+
+}
+
+.date-visit {
+  display: flex;
+}
+
+.year-visit {
+  display: flex;
+}
+
+.review-year-visit {
+  padding-right: 10px;
+}
+
+.month-visit {
+  display: flex;
+}
+
+.review-month-visit {
+  padding: 0 10px;
+}
