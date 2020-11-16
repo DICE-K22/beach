@@ -1,0 +1,31 @@
+.main {
+  height: calc(100vh - 25vh);
+  width: 100vw;
+}
+
+.main-search {
+  text-align: center;
+  background-color: skyblue;
+  padding: 100px 0;
+}
+
+.review-content {
+  text-align: center;
+}
+
+.content-title {
+}
+
+.list {
+  
+}
+
+.review-info {
+  border: 1px solid black;
+  padding: 10px;
+  
+}
+
+.review-title {
+  
+}

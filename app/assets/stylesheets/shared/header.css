@@ -1,0 +1,48 @@
+.top-page-header {
+  height: 10vh;
+  width: 100vw;
+  background-color: beige;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-title {
+  text-decoration: none;
+  margin-top: 17px;
+}
+
+.list {
+  padding-left: 100px;
+  display: flex;
+  list-style: none;
+  margin-top: 17px;
+}
+
+.user-name {
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.login {
+  border: 1px solid yellow;
+  margin-right: 10px;
+  text-decoration: none;
+  padding: 15px 20px;
+}
+
+.logout {
+  border: 1px solid yellow;
+  margin-right: 10px;
+  text-decoration: none;
+  padding: 15px 20px;
+}
+
+.sign-in {
+  border: 1px solid yellow;
+  margin-right: 10px;
+  text-decoration: none;
+  padding: 15px 20px;
+}
