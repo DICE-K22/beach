@@ -5,9 +5,11 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    @user = current_user.username if user_signed_in?
   end
 
   def create
+    
     @review = Review.create(review_params)
     if @review.save
       redirect_to root_path
@@ -33,6 +35,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:title, :place, :date_of_visiting, :pros, :cons, :type_of_visitor_id, :type_of_beach_id, :color_of_sand_id, :cleanliness_id, :transparency_id, :quietness_id, :crowd_id, :street_vendor_id, :shop_id, :toilet_id, :shower_id, :recommended_id, :image)
+    params.require(:review).permit(:title, :place, :date_of_visiting, :pros, :cons, :type_of_visitor_id, :type_of_beach_id, :color_of_sand_id, :cleanliness_id, :transparency_id, :quietness_id, :crowd_id, :street_vendor_id, :shop_id, :toilet_id, :shower_id, :recommended_id, :image).merge(user_id: current_user.id)
   end
 end
