@@ -2,6 +2,7 @@
   <h2 class="show-title">
     Review
   </h2>
+  <%= link_to 'Delete Your Review', review_path(@review.id), method: :delete, class: 'review-delete'%>
     <li class='list'>
         <div class='review-info'>
           <h3 class='review-title'>
