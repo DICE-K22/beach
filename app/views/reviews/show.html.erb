@@ -60,18 +60,23 @@
         </div>
     </li>
     <div class="comment-container">
-      <%= form_with local: true do |f| %>
-        <%= f.text_area :text, rows: "2" %>
-        <%= f.submit "SEND" %>
+    <h2 class="comment-title">
+      <%= "~Comments~"%>
+    </h2>
+      <div class="comments" id='comments'>
+          <% @comments.reverse_each do |comment| %>
+            <p><%= comment.user.username + ":" %>
+           <%= comment.comment %></p>
+          <% end %>
+      </div>
+      <% if current_user %>
+        <%= form_with model: [@review, @comment] do |f| %>
+          <%= f.text_field :comment %>
+          <%= f.submit '送信' %>
+        <% end %>
+      <% else %>  
+        <p>If you want to comment, you need to sign in.</p>
       <% end %>
-    <div class="comments">
-      <h4>＜Comments＞</h4>
-      <%#<% if @comments %>
-        <%#<% @comments.each do |comment| %>
-          <p>
-            <%= "Daisuke" %>：
-            <%= "wow!" %>
-          </p>
-    </div>
+    </div>  
   </div>
 </div>

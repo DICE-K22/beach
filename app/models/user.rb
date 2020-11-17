@@ -10,5 +10,7 @@ class User < ApplicationRecord
   end
 
   has_many :reviews
+  has_many :comments
+  
 end
 

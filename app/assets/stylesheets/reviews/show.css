@@ -12,5 +12,12 @@
 }
 
 .comment-container {
-  
+  text-align: center;
+}
+.comment-title {
+  background-color: skyblue;
+}
+
+.comments {
+  border: dotted 1px black;
 }
