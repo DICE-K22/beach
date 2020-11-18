@@ -1,6 +1,6 @@
 <header class= "top-page-header" >
   <div class= "header">
-    <%= link_to 'Going to the Beach', "#", class: "header-title" %>
+    <%= link_to 'Finding the Beach', root_path, class: "header-title" %>
     <div class= "list">
     <% if user_signed_in? %>
       <li><%= link_to current_user.username, "#", class: "user-name" %></li>

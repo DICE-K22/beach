@@ -1,7 +1,15 @@
 class Review < ApplicationRecord
   has_one_attached :image
-  belongs_to :user
   has_many :comments
+  belongs_to :user
+
+  def self.search(search)
+    if search != ""
+      Review.where('place LIKE(?)', "%#{search}%")
+    else
+      Review.all
+    end
+  end
   
   with_options presence: true do
     validates :title

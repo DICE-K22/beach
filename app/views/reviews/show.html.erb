@@ -1,3 +1,5 @@
+<%= render "shared/header" %>
+
 <div class="show-container">
   <h2 class="show-title">
     Review
@@ -10,6 +12,9 @@
           </h3>
           <div class='review-place'>
             <span><%= @review.place %></span>
+          </div>
+          <div class="review-username">
+            <%= @review.user.username%>
           </div>
           <div class='review-date'>
              <span><%= @review.date_of_visiting%></span>
@@ -75,7 +80,7 @@
           <%= f.submit '送信' %>
         <% end %>
       <% else %>  
-        <p>If you want to comment, you need to sign in.</p>
+        <p>If you want to comment, you need to <%= link_to "Sign in", new_user_session_path, class:"comment-sign-in"%>.</p>
       <% end %>
     </div>  
   </div>
