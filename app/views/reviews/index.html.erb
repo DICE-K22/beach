@@ -7,18 +7,17 @@
     Search for the Beach
     </h2>
     <h3 class= "search-description">
-    Welcome to Going to the Beach.
+    Welcome to Finding the Beach.<br/>
+    Let's get infomation of the Beach!
     </h3>
-    <form class="search-form" action="#">
-      <input class='input-box' placeholder='ex. Waikiki'>
-      <button class="search-btn">
-        Seach
-      </button>
-    </form>
+    <%= form_with(url: search_reviews_path, local: true, method: :get, class: "search-form") do |f| %>
+      <%= f.text_field :keyword, placeholder: "ex. Waikiki", class: "search-input" %>
+      <%= f.submit "SEARCH", class: "search-btn" %>
+    <% end %>
   </div>
   <div class= "review-content">
     <h2 class= "content-title">
-    Reviews
+    ~Reviews~
     </h2>
     <% @reviews.each do |review| %>
     <li class='list'>
@@ -80,8 +79,8 @@
       <% end %>
     </li>
     <% end %>
+    <% if @reviews.empty? %>
         <li class='list'>
-      <%= link_to '#' do %>
         <div class='review-info'>
           <h3 class='review-title'>
             Beautiful
@@ -136,8 +135,8 @@
           </div>
           <%= image_tag "test.jpg", class: "item-img" %>
         </div>
-      <% end %>
     </li>
+    <% end %>
   </div>
 </div>
 

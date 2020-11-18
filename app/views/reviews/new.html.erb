@@ -1,17 +1,13 @@
+<%= render "shared/header" %>
+
 <div class= "review-contents">
   <div class= "write-review-main">
     <h2 class= "main-title">Write a review</h2>
-    <% unless user_signed_in? %>
-      <p class="attention">You can write your review as a Guest or <%= link_to 'click here', new_user_session_path, class:"click-here"%> to sign-in to your user account.</p>
-    <% end %>
+    
     <div class="username">
       Username
       <div class="review-username">
-        <% if user_signed_in? %>
-          <%= @user %>
-        <% else %>  
-          <%= "Guest" %>
-        <% end %>
+        <%= @user %>
       </div>    
     </div>
     <%= form_with model: @review, local: true do |f| %>
