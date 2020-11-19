@@ -70,14 +70,17 @@
     </h2>
       <div class="comments" id='comments'>
           <% @comments.reverse_each do |comment| %>
-            <p><%= comment.user.username + ":" %>
-           <%= comment.comment %></p>
+            <p>
+              <%= comment.user.username + ":" %>
+              <%= comment.comment %>
+              <%= comment.created_at.strftime('%d %b %H:%M') %>
+            </p>
           <% end %>
       </div>
       <% if current_user %>
         <%= form_with model: [@review, @comment] do |f| %>
           <%= f.text_field :comment %>
-          <%= f.submit '送信' %>
+          <%= f.submit 'SEND' %>
         <% end %>
       <% else %>  
         <p>If you want to comment, you need to <%= link_to "Sign in", new_user_session_path, class:"comment-sign-in"%>.</p>
