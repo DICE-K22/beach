@@ -1,10 +1,11 @@
 .top-page-footer {
-  background-color: beige;
-  height: 15vh;
-  width: 100vw;
+  background-color: skyblue;
+  height: 120px;
+  width: 100%;
 }
 
 .footer {
   text-align: center;
-  align-items: center;
+  padding: 40px;
+  color: snow;
 }

@@ -1,15 +1,40 @@
-<header class= "top-page-header" >
+<header>
   <div class= "header">
-    <%= link_to 'Finding the Beach', root_path, class: "header-title" %>
-    <div class= "list">
-    <% if user_signed_in? %>
-      <li><%= link_to current_user.username, "#", class: "user-name" %></li>
-      <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "logout" %></li>
-    <% else %>
-      <li><%= link_to 'Login', new_user_session_path, class: "login" %></li>
-      <li><%= link_to 'SignUp', new_user_registration_path, class: "sign-up" %></li> 
-    <% end %>  
-      <li><%= link_to 'Wtite a Review', new_review_path, class: "post" %></li>
-   </div>
-  </div> 
+    <div class="header-left">
+      <%= link_to 'Finding the Beach', root_path, class: "header-logo" %>
+    </div>
+    <div class="header-right">
+      <div class= "header-lists">
+        <li><%= link_to 'Beach Guides', "#", class: "header-info"%></li>
+        <li><%= link_to 'Best & Worst Beaches', "#", class: "header-info"%></li>
+        <li><%= link_to 'More Stuff', "#", class: "header-info"%></li>
+        <% if user_signed_in? %>
+          <li><%= link_to current_user.username, "#", class: "header-list" %></li>
+          <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "header-list" %></li>
+        <% else %>
+          <li><%= link_to 'Login', new_user_session_path, class: "header-list" %></li>
+          <li><%= link_to 'SignUp', new_user_registration_path, class: "header-list" %></li> 
+        <% end %>  
+        <li><%= link_to 'Wtite a Review', new_review_path, class: "write-a-review" %></li>
+        <div class="drawer">
+          <input type="checkbox" id="check" class="drawer-hidden" >
+          <label for="check" class="drawer-open"><span></span></label>
+          <nav class="drawer-content">
+            <ul class="drawer-list">
+              <li class="drawer-li"><%= link_to 'Beach Guides', "#", class: "drawer-item"%></li>
+              <li class="drawer-li"><%= link_to 'Best & Worst Beaches', "#", class: "drawer-item"%></li>
+              <li class="drawer-li"><%= link_to 'More Stuff', "#", class: "drawer-item"%></li>
+              <% if user_signed_in? %>
+                <li class="drawer-btn"><%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "header-list" %></li>
+              <% else %>
+                <li class="drawer-btn"><%= link_to 'Login', new_user_session_path, class: "header-list" %></li>
+                <li class="drawer-btn"><%= link_to 'SignUp', new_user_registration_path, class: "header-list" %></li> 
+              <% end %>  
+              <li class="drawer-btn"><%= link_to 'Wtite a Review', new_review_path, class: "write-a-review" %></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div> 
+  </div>
 </header>

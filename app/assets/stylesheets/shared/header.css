@@ -1,55 +1,161 @@
-.top-page-header {
-  height: 10vh;
-  width: 100vw;
-  background-color: beige;
-}
-
 .header {
+  width: 100%;
+  height: 60px;
+  padding: 15px;
   display: flex;
   justify-content: space-between;
+  background-color: white;
+  box-shadow: 0px 0px 5px ;
+  position: fixed;
 }
 
-.header-title {
+.header-left {
+  width: 50%;
+}
+
+.header-logo {
   text-decoration: none;
-  margin-top: 17px;
+  font-family: 'arial black';
+  font-size: 22px;
+  color: rgb(52, 178, 228);
 }
 
-.list {
-  padding-left: 100px;
+.header-right {
+  width: 50%;
+}
+
+.header-lists {
   display: flex;
+  justify-content: space-around;
+}
+
+li {
   list-style: none;
-  margin-top: 17px;
 }
 
-.user-name {
+.header-info {
+  font-family: 'arial';
   text-decoration: none;
-  margin-right: 10px;
+  font-size: 17px;
+  color: black;
 }
 
-.login {
-  border: 1px solid yellow;
-  margin-right: 10px;
+.header-list {
+  color: snow;
+  font-family: 'arial';
+  font-size: 17px;
   text-decoration: none;
-  padding: 15px 20px;
+  border: solid 1px dodgerblue;
+  padding: 8px 10px;
+  background-color: dodgerblue;
 }
 
-.logout {
-  border: 1px solid yellow;
-  margin-right: 10px;
+.write-a-review {
+  color: snow;
+  font-family: 'arial';
+  font-size: 17px;
+  border: solid 1px orange;
+  background-color: orange;
+  padding: 8px 10px;
   text-decoration: none;
-  padding: 15px 20px;
 }
 
-.sign-up {
-  border: 1px solid yellow;
-  margin-right: 10px;
-  text-decoration: none;
-  padding: 15px 20px;
+.drawer-hidden {
+  display: none;
 }
 
-.post {
-  border: 1px solid yellow;
-  margin-right: 10px;
+.drawer-open {
+  display: flex;
+  height: 27px;
+  width: 27px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.drawer-open span,
+.drawer-open span:before,
+.drawer-open span:after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background: black;
+  transition: 0.5s;
+  position: absolute;
+}
+
+.drawer-open span:before {
+  bottom: 8px;
+}
+
+.drawer-open span:after {
+  top: 8px;
+}
+
+#check:checked ~ .drawer-open span {
+  background: rgba(255, 255, 255, 0);
+}
+
+#check:checked ~ .drawer-open span::before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+
+#check:checked ~ .drawer-open span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.drawer-content {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 100%;/* メニューを画面の外に飛ばす */
+  z-index: 99;
+  background: snow;
+  transition: .5s;
+}
+
+#check:checked ~ .drawer-content {
+  left: 0;/* メニューを画面に入れる */
+}
+
+.drawer-list {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid black;
+  margin: 100px 250px;
+  background-color: white;
+}
+
+.drawer-li {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.drawer-btn {
+  margin-bottom: 20px;
+}
+
+.drawer-item {
+  font-size: 17px;
   text-decoration: none;
-  padding: 15px 20px;
+  color: black;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .header-info {
+    display: none;
+  }
+}
+
+@media (max-width: 599px) {
+  .header-info {
+    display: none;
 }
