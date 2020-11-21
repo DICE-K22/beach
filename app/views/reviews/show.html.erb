@@ -2,64 +2,85 @@
 
 <div class="show-container">
   <h2 class="show-title">
-    Review
+    <span>~</span><%= @review.user.username %><span>'s Review~</span>
   </h2>
   <%= link_to 'Delete Your Review', review_path(@review.id), method: :delete, class: 'review-delete'%>
     <li class='list'>
         <div class='review-info'>
           <h3 class='review-title'>
-            <%= @review.title %>
+            <span>"</span><%= @review.title %><span>"</span>
           </h3>
-          <div class='review-place'>
-            <span><%= @review.place %></span>
+          <div class='review-review'>
+            <span class="review-left"><%= "Place"%></span>
+            <span class="review-right"><%= @review.place %></span> 
           </div>
-          <div class="review-username">
-            <%= @review.user.username%>
+          <div class='review-review'>
+            <span class="review-left"><%= "Date"%></span>
+            <span class="review-right"><%= @review.date_of_visiting%></span>
           </div>
-          <div class='review-date'>
-             <span><%= @review.date_of_visiting%></span>
+          <div class= "review-review">
+            <span class="review-left">Pros</span>
+            <span class="review-right"><%= @review.pros %></span>
           </div>
-          <div class= "review-pros">
-            <span>Pros: <%= @review.pros %></span>
+           <div class= "review-review">
+            <span class="review-left">Cons</span>
+            <span class="review-right"><%= @review.cons %></span>
           </div>
-           <div class= "review-cons">
-            <span>Cons: <%= @review.cons %></span>
+          <div class='review-review'>
+            <span class="review-left">Type of Visitor</span>
+            <span class="review-right"><%= @review.type_of_visitor.name %></span>
           </div>
-          <div class='review-type-of-visitor'>
-            <span>Type of Visitor: <%= @review.type_of_visitor.name %></span>
+          <div class='review-review'>
+             <span class="review-left">Type of Beach</span>
+             <span class="review-right"><%= @review.type_of_beach.name %></span>
           </div>
-          <div class='review-type-of-beach'>
-             <span>Type of Beach: <%= @review.type_of_beach.name %></span>
+          <div class= "review-review">
+            <span class="review-left">Color of Sand</span>
+            <span class="review-right"><%= @review.color_of_sand.name %></span>
           </div>
-          <div class= "review-color-of-sand">
-            <span>Color of Sand: <%= @review.color_of_sand.name %></span>
+           <div class= "review-review">
+            <span class="review-left">Cleanliness</span>
+            <span class="review-right">
+              <span class="star"><%= @review.cleanliness.name %></span>
+            </span>  
           </div>
-           <div class= "review-cleanleness">
-            <span>Cleanliness: <%= @review.cleanliness.name %></span>
+          <div class='review-review'>
+            <span class="review-left">Transparency</span>
+            <span class="review-right">
+              <span class="star"><%= @review.transparency.name %></span>
+            </span>  
           </div>
-          <div class='review-transparency'>
-            <span>Transparency: <%= @review.transparency.name %></span>
+          <div class='review-review'>
+            <span class="review-left">Quietness</span>
+            <span class="review-right">
+              <span class="star"><%= @review.quietness.name %></span>
+            </span>
           </div>
-          <div class='review-quietness'>
-             <span>Quietness: <%= @review.quietness.name %></span>
+          <div class= "review-review">
+            <span class="review-left">Clowd</span>
+            <span class="review-right"><%= @review.crowd.name %></span>
           </div>
-          <div class= "review-crowd">
-            <span>Clowd: <%= @review.crowd.name %></span>
+           <div class= "review-review">
+            <span class="review-left">Street Vendor</span>
+            <span class="review-right"><%= @review.street_vendor.name %></span>
           </div>
-           <div class= "review-street-vendor">
-            <span>Street Vendor: <%= @review.street_vendor.name %></span>
+          <div class='review-review'>
+            <span class="review-left">Shop</span>
+            <span class="review-right"><%= @review.shop.name %></span>
           </div>
-          <div class='review-shop'>
-            <span>Shop: <%= @review.shop.name %></span>
+          <div class='review-review'>
+             <span class="review-left">Toilet</span>
+             <span class="review-right"><%= @review.toilet.name %></span>
           </div>
-          <div class='review-toilet'>
-             <span>Toilet: <%= @review.toilet.name %></span>
+          <div class= "review-review">
+            <span class="review-left">Shower</span>
+            <span class="review-right"><%= @review.shower.name %></span>
           </div>
-          <div class= "review-shower">
-            <span>Shower: <%= @review.shower.name %></span>
-          </div>
-           <div class= "review-recommended">
-            <span>Recommended: <%= @review.recommended.name %></span>
+           <div class= "review-review">
+            <span class="review-left">Recommended</span>
+            <span class="review-right">
+              <span class="star"><%= @review.recommended.name %></span>
+              </span>
           </div>
           <%= image_tag @review.image.variant(resize: '600x600'), class: 'review-image' if @review.image.attached? %>
         </div>
@@ -69,18 +90,23 @@
       <%= "~Comments~"%>
     </h2>
       <div class="comments" id='comments'>
+        <% if @comments.empty? %>
+          <%= "There are no comments yet." %>
+        <% end %>
           <% @comments.reverse_each do |comment| %>
-            <p>
-              <%= comment.user.username + ":" %>
-              <%= comment.comment %>
-              <%= comment.created_at.strftime('%d %b %H:%M') %>
+            <p class="comment-area">
+              <span class="comment-left"><%= comment.user.username + ":" %></span>
+              <span class="comment-right">
+                <span class="comment"><%= comment.comment %></span>
+              </span>
+                <span class="comment-time"><%= comment.created_at.strftime('%d %b %H:%M') %></span>
             </p>
           <% end %>
       </div>
       <% if current_user %>
         <%= form_with model: [@review, @comment] do |f| %>
-          <%= f.text_field :comment %>
-          <%= f.submit 'SEND' %>
+          <%= f.text_field :comment, placeholder: "Enter Comment ...", class: "comment-input" %>
+          <%= f.submit 'SEND', class: "comment-btn" %>
         <% end %>
       <% else %>  
         <p>If you want to comment, you need to <%= link_to "Sign in", new_user_session_path, class:"comment-sign-in"%>.</p>
@@ -88,3 +114,5 @@
     </div>  
   </div>
 </div>
+
+<%= render "shared/footer" %>
