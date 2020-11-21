@@ -1,23 +1,84 @@
 .show-container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  width: 100%;
+  background-color: snow;
+  text-align: center;
 }
 
 .show-title {
-  background-color: skyblue;
-  width: 100vw;
-  font-size: 20px;
   text-align: center;
+  padding-top: 90px;
+  padding-bottom: 20px;
+  font-family: 'arial black';
+  font-size: 30px;
+  color: skyblue;
+}
+
+.review-delete {
+  text-decoration: none;
+  border: 1px solid #B22222;
+  color: snow;
+  background-color: #B22222;
+  padding: 10px;
+}
+
+.list {
+  margin-top: 30px;
 }
 
 .comment-container {
   text-align: center;
 }
 .comment-title {
-  background-color: skyblue;
+  font-family: 'arial black';
+  font-size: 30px;
+  color: skyblue;
 }
 
 .comments {
-  border: dotted 1px black;
+  border: solid 1px black;
+  margin: 0 199px;
+  background-color: white;
+  padding: 10px;
+  margin-top: 20px;
+  
+}
+
+.comment-area {
+  word-break: break-word;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.comment-left {
+  display: inline-block;
+  width: 9em;
+}
+
+.comment-right {
+  display: inline-block;
+  width: 9em;
+}
+
+.comment-time {
+  font-size: 5px;
+}
+
+.comment-input {
+  margin-top: 20px;
+  padding: 5px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #DDDDDD;
+  width: 400px;
+  outline: 0;
+}
+
+.comment-btn {
+  padding: 5px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: orange;
+  cursor: pointer;
+  background-color: orange;
+  color: snow;
+  margin-bottom: 30px;
 }

@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    @time = Time.now.strftime('%d %b %H:%M')
+    @time = Time.now.strftime('%H:%M')
     @user = current_user.username
     if @comment.save
       ActionCable.server.broadcast 'comment_channel', user: @user, content: @comment, time: @time
