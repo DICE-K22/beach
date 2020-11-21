@@ -27,11 +27,21 @@
 
 .comment-container {
   text-align: center;
+  padding-bottom: 20px;
 }
 .comment-title {
   font-family: 'arial black';
   font-size: 30px;
   color: skyblue;
+}
+
+.comment-attention {
+  padding: 10px;
+}
+
+.comment-sign-in {
+  text-decoration: none;
+  color: blue;
 }
 
 .comments {
@@ -40,7 +50,6 @@
   background-color: white;
   padding: 10px;
   margin-top: 20px;
-  
 }
 
 .comment-area {

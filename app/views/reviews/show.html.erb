@@ -89,6 +89,9 @@
     <h2 class="comment-title">
       <%= "~Comments~"%>
     </h2>
+    <% unless current_user%>
+      <p class="comment-attention">If you want to comment, <%= link_to "click here to sign-in", new_user_session_path, class:"comment-sign-in"%> to your user account.</p>
+    <% end %>
       <div class="comments" id='comments'>
         <% if @comments.empty? %>
           <%= "There are no comments yet." %>
@@ -108,8 +111,6 @@
           <%= f.text_field :comment, placeholder: "Enter Comment ...", class: "comment-input" %>
           <%= f.submit 'SEND', class: "comment-btn" %>
         <% end %>
-      <% else %>  
-        <p>If you want to comment, you need to <%= link_to "Sign in", new_user_session_path, class:"comment-sign-in"%>.</p>
       <% end %>
     </div>  
   </div>
