@@ -5,10 +5,11 @@
 .main-search {
   text-align: center;
   background-color: skyblue;
-  padding: 120px 0;
+  padding: 120px 0 ;
+  width: 100%;
 }
 
-.search-title {
+.main-search-title {
   font-family: 'arial black';
   font-size: 40px;
   color: snow;
