@@ -2,45 +2,71 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-color: snow;
 }
 
 .write-review-main {
+  background-color: white;
+  border: solid 1px black;
+  padding: 30px;
+  margin-bottom: 20px;
 }
 
 .main-title {
-  background-color: skyblue;
+  color: skyblue;
   text-align: center;
-  font-size: 40px;
+  font-family: 'arial black';
+  font-size: 30px;
+  padding-top: 90px;
+  margin-bottom: 20px;
+}
+
+.write-review-title {
+  margin-bottom: 20px;
+}
+
+.write-review-require {
+  padding-bottom: 20px;
+}
+
+.review-username {
+  font-size: 25px;
 }
 
 .review-title {
   font-size: 16px;
 }
 
+.write-review-text {
+  padding: 5px;
+}
+
 .indispensable {
   color: red;
 }
 
-.review-title-text {
-
+.select-bow {
+  width: 150px;
+  height: 25px;
 }
 
-.date-visit {
-  display: flex;
+.review-btn-contents {
+  margin-top: 40px;
 }
 
-.year-visit {
-  display: flex;
+.review-btn {
+  color: snow;
+  font-family: 'arial';
+  font-size: 17px;
+  border: 1px solid orange;
+  background-color: orange;
+  padding: 8px 10px;
+  cursor: pointer;
 }
 
-.review-year-visit {
-  padding-right: 10px;
-}
 
-.month-visit {
-  display: flex;
-}
 
-.review-month-visit {
-  padding: 0 10px;
-}
+
+
+
+

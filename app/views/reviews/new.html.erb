@@ -1,135 +1,141 @@
 <%= render "shared/header" %>
 
 <div class= "review-contents">
+  <h2 class= "main-title">~Write a Review~</h2>
   <div class= "write-review-main">
-    <h2 class= "main-title">Write a review</h2>
-    
-    <div class="username">
-      Username
+    <div class="write-review-require">
+      <span class="indispensable">*</span>
+      is required
+    </div>
+
+    <div class="write-review-title">
+      Username:
       <div class="review-username">
         <%= @user %>
       </div>    
     </div>
     <%= form_with model: @review, local: true do |f| %>
-      <div class= "title">
-        <div class="review-title">
+      <div class= "write-review-title">
+        <div class="title">
           Title
           <span class="indispensable">*</span>
         </div>
-        <%= f.text_area :title, class:"title-text", id:"title", placeholder:"ex. It was nice beach."%>
+        <%= f.text_area :title, class:"write-review-text", id:"title", placeholder:"ex. It was nice beach."%>
       </div>  
-      <div class= "place">  
-        <div class="review-place">
+      <div class= "write-review-title">  
+        <div class="place">
           Place
           <span class="indispensable">*</span>  
         </div>
-        <%= f.text_area :place, class:"place-text", id:"place", placeholder: "ex. Waikiki"%>
+        <%= f.text_area :place, class:"write-review-text", id:"place", placeholder: "ex. Waikiki"%>
       </div>
-      <div class="date-title">
-        Date of Visiting
-        <span class="indispensable">*</span>
+      <div class="write-review-title">
+        <div class="date-of-visiting">
+          Date of Visiting
+          <span class="indispensable">*</span>
+        </div>
+        <div class="date-visit">
+          <%= f.date_field :date_of_visiting, class:"date-field" %>
+        </div>  
       </div>
-      <div class="date-visit">
-        <%= f.date_field :date_of_visiting, class:"date-field" %>
-      </div>  
-      <div class= "pros">  
-        <div class="review-pros">
+      <div class= "write-review-title">  
+        <div class="pros">
           Pros  
         </div>
-        <%= f.text_area :pros, class:"pros-text", id:"pros"%>
+        <%= f.text_area :pros, class:"write-review-text", id:"pros"%>
       </div>
-        <div class= "cons">  
-        <div class="review-cons">
+        <div class= "write-review-title">  
+        <div class="cons">
           Cons 
         </div>
-        <%= f.text_area :cons, class:"cons-text", id:"cons"%>
+        <%= f.text_area :cons, class:"write-review-text", id:"cons"%>
       </div>
-      <div class="type-of-visitor">
-          <div class="review-type-of-visitor">
+      <div class="write-review-title">
+          <div class="type-of-visitor">
             Who did you come with?
             <span class="indispensable">*</span>
           </div>
           <%= f.collection_select(:type_of_visitor_id, TypeOfVisitor.all, :id, :name, {}, {class:"select-bow", id:"review-category"}) %>
         </div>
-        <div class="type-of-beach">
-          <div class="review-type-of-beach">
+        <div class="write-review-title">
+          <div class="type-of-beach">
             Type of Beach
             <span class="indispensable">*</span>
           </div>
           <%= f.collection_select(:type_of_beach_id, TypeOfBeach.all, :id, :name, {}, {class:"select-bow", id:"review-category"}) %>
         </div>
-        <div class="color-of-sand">
-          <div class="review-color-of-sand">
+        <div class="write-review-title">
+          <div class="color-of-sand">
             Color of Sand
             <span class="indispensable">*</span>
           </div>
           <%= f.collection_select(:color_of_sand_id, ColorOfSand.all, :id, :name, {}, {class:"select-bow", id:"review-category"}) %>
         </div>
-        <div class="cleanliness">
-          <div class="review-cleanliness">
+        <div class="write-review-title">
+          <div class="cleanliness">
             Cleanliness
             <span class="indispensable">*</span>
           </div>
           <%= f.collection_select(:cleanliness_id, Cleanliness.all, :id, :name, {}, {class:"select-bow", id:"review-category"}) %>
         </div>
-        <div class="transparency">
-          <div class="review-transparency">
+        <div class="write-review-title">
+          <div class="transparency">
             Transparency
             <span class="indispensable">*</span>
           </div>
           <%= f.collection_select(:transparency_id, Transparency.all, :id, :name, {}, {class:"select-bow", id:"review-category"}) %>
         </div>
+          <div class="write-review-title">
           <div class="quietness">
-          <div class="review-quietness">
             Quietness
             <span class="indispensable">*</span>
           </div>
           <%= f.collection_select(:quietness_id, Quietness.all, :id, :name, {}, {class:"select-bow", id:"review-category"}) %>
         </div>
+          <div class="write-review-title">
           <div class="crowd">
-          <div class="review-crowd">
             Crowd
             <span class="indispensable">*</span>
           </div>
           <%= f.collection_select(:crowd_id, Crowd.all, :id, :name, {}, {class:"select-bow", id:"review-category"}) %>
         </div>
+          <div class="write-review-title">
           <div class="street-vendor">
-          <div class="review-street-vendor">
             Street Vendor
             <span class="indispensable">*</span>
           </div>
           <%= f.collection_select(:street_vendor_id, StreetVendor.all, :id, :name, {}, {class:"select-bow", id:"review-category"}) %>
         </div>
+          <div class="write-review-title">
           <div class="shop">
-          <div class="review-shop">
             Shop
             <span class="indispensable">*</span>
           </div>
           <%= f.collection_select(:shop_id, Shop.all, :id, :name, {}, {class:"select-bow", id:"review-category"}) %>
         </div>
+          <div class="write-review-title">
           <div class="toilet">
-          <div class="review-toilet">
             Toilet
             <span class="indispensable">*</span>
           </div>
           <%= f.collection_select(:toilet_id, Toilet.all, :id, :name, {}, {class:"select-bow", id:"review-category"}) %>
         </div>
+          <div class="write-review-title">
           <div class="shower">
-          <div class="review-shower">
             Shower
             <span class="indispensable">*</span>
           </div>
           <%= f.collection_select(:shower_id, Shower.all, :id, :name, {}, {class:"select-bow", id:"review-category"}) %>
         </div>
+          <div class="write-review-title">
           <div class="recommended">
-          <div class="review-recommended">
             Recommended
             <span class="indispensable">*</span>
           </div>
           <%= f.collection_select(:recommended_id, Recommended.all, :id, :name, {}, {class:"select-bow", id:"review-category"}) %>
         </div>
-        <div class="img-upload">
-          <div class="img-title">
+        <div class="write-review-title">
+          <div class="img-upload">
             Let's Share Your Photo!
           </div>
           <%= f.file_field :image, id:"review-image"%>
@@ -140,4 +146,6 @@
     <% end %>
   </div>
 </div>
+
+<%= render "shared/footer" %>
   

@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
-    @user = current_user.username if user_signed_in?
+    @user = current_user.username
   end
 
   def create
@@ -16,6 +16,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to root_path
     else
+      @user = current_user.username
       render :new
     end
   end

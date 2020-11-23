@@ -91,6 +91,7 @@
   display: inline-block;
   width: 20em;
   text-align: left;
+  word-break: break-word;
 }
 
 .review-review {
