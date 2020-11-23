@@ -22,6 +22,12 @@
   padding-bottom: 30px;
 }
 
+.login-flash-message {
+  font-size: 2px;
+  color: red;
+  margin-bottom: 2vh;
+}
+
 .field {
   margin-bottom: 20px;
 }

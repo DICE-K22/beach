@@ -16,7 +16,7 @@ class Review < ApplicationRecord
     validates :place
     validates :date_of_visiting
 
-    with_options numericality: {other_than: 1 } do
+    with_options numericality: {other_than: 1, message: 'Select' } do
       validates :type_of_visitor_id
       validates :type_of_beach_id
       validates :color_of_sand_id
