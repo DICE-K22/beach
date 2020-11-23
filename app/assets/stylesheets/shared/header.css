@@ -115,14 +115,14 @@ li {
   height: 100%;
   position: fixed;
   top: 0;
-  left: 100%;/* メニューを画面の外に飛ばす */
+  left: 100%;
   z-index: 99;
   background: snow;
   transition: .5s;
 }
 
 #check:checked ~ .drawer-content {
-  left: 0;/* メニューを画面に入れる */
+  left: 0;
 }
 
 .drawer-list {

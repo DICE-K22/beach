@@ -1,0 +1,26 @@
+.search-container {
+  background-color: snow;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.search-title {
+  color: skyblue;
+  text-align: center;
+  font-family: 'arial black';
+  font-size: 30px;
+  padding-top: 90px;
+  margin-bottom: 20px;
+}
+
+.contents-row {
+  padding-bottom: 20px;
+}
+
+.no-results-content {
+  background-color: white;
+  border: 1px solid black;
+  padding: 20px;
+  margin: 30px 100px;
+
+}
