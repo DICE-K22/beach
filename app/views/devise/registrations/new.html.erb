@@ -3,6 +3,10 @@
 <div class="signup-container">
   <h2 class="signup-title">~Sign up~</h2>
     <div class="signup-area">
+      <div class="signup-require">
+        <span class="indispensable">*</span>
+        is required
+      </div>
       <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
