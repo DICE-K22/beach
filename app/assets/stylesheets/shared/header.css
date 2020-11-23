@@ -158,4 +158,5 @@ li {
 @media (max-width: 599px) {
   .header-info {
     display: none;
+  }
 }

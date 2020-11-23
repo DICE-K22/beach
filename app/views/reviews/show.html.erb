@@ -4,7 +4,9 @@
   <h2 class="show-title">
     <span>~</span><%= @review.user.username %><span>'s Review~</span>
   </h2>
-  <%= link_to 'Delete Your Review', review_path(@review.id), method: :delete, class: 'review-delete'%>
+  <% if user_signed_in? && current_user.id == @review.user_id %>
+    <%= link_to 'Delete Your Review', review_path(@review.id), method: :delete, class: 'review-delete'%>
+  <% end %>  
     <li class='list'>
         <div class='review-info'>
           <h3 class='review-title'>
