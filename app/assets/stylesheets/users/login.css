@@ -1,0 +1,42 @@
+.login-container {
+  background-color: snow;
+  text-align: center;
+  height: 100vh;
+}
+
+.login-title {
+  text-align: center;
+  padding-top: 90px;
+  padding-bottom: 20px;
+  font-family: 'arial black';
+  font-size: 30px;
+  color: skyblue;
+}
+
+.login-area {
+  align-items: center;
+  border: 1px solid black;
+  padding: 30px 0 ;
+  margin: 0 199px;
+  background-color: white;
+  padding-bottom: 30px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.login-action {
+  margin-bottom: 20px;
+}
+
+.login-btn {
+  color: snow;
+  font-family: 'arial';
+  font-size: 17px;
+  text-decoration: none;
+  border: solid 1px dodgerblue;
+  padding: 8px 10px;
+  background-color: dodgerblue;
+  cursor: pointer;
+}
