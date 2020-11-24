@@ -1,12 +1,14 @@
 .main {
-  width: 100%;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: snow;
 }
 
 .main-search {
   text-align: center;
   background-color: skyblue;
   padding: 120px 0 ;
-  width: 100%;
+  width: 100vw;
 }
 
 .main-search-title {
@@ -49,6 +51,7 @@
   text-align: center;
   background-color: snow;
   padding-bottom: 10px;
+  height: 100%;
 }
 
 .content-title {
@@ -108,6 +111,12 @@
 
 .review-image {
   padding: 10px;
+}
+
+.review-empty {
+  border: 1px solid black;
+  padding: 10px;
+  margin-top: 20px;
 }
 
 @media (max-width: 1024px) {

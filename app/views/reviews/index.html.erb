@@ -104,62 +104,7 @@
     </li>
     <% end %>
     <% if @reviews.empty? %>
-        <li class='list'>
-        <div class='review-info'>
-          <h3 class='review-title'>
-            Beautiful
-          </h3>
-          <div class='review-place'>
-            <span>Waikiki Beach</span>
-          </div>
-          <div class='review-date'>
-             <span> 2020 August</span>
-          </div>
-          <div class= "review-pros">
-            <span>Pros: Nice Place</span>
-          </div>
-           <div class= "review-cons">
-            <span>Cons: Bad Place</span>
-          </div>
-          <div class='review-type-of-visitor'>
-            <span>Type of Visitor: Solo</span>
-          </div>
-          <div class='review-type-of-beach'>
-             <span>Type of Beach: Sand</span>
-          </div>
-          <div class= "review-color-of-sand">
-            <span>Color of Sand: White</span>
-          </div>
-           <div class= "review-cleanleness">
-            <span>Cleanliness: ★★★★★</span>
-          </div>
-          <div class='review-transparency'>
-            <span>Transparency: ★★★★★</span>
-          </div>
-          <div class='review-quietness'>
-             <span>Quietness: ★★★★★</span>
-          </div>
-          <div class= "review-crowd">
-            <span>Clowd: A lot</span>
-          </div>
-           <div class= "review-street-vendor">
-            <span>Street Vendor: Non</span>
-          </div>
-          <div class='review-shop'>
-            <span>Shop: Non</span>
-          </div>
-          <div class='review-toilet'>
-             <span>Toilet: Non</span>
-          </div>
-          <div class= "review-shower">
-            <span>Shower: Non</span>
-          </div>
-           <div class= "review-recommended">
-            <span>Recommended: ★★★★★</span>
-          </div>
-          <%= image_tag "test.jpg", class: "item-img" %>
-        </div>
-    </li>
+        <span class="review-empty"><%= "There are no reviews yet." %></span>
     <% end %>
   </div>
 </div>
