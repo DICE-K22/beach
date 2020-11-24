@@ -39,6 +39,7 @@
 
 .write-review-text {
   padding: 5px;
+  border-radius: 3px;
 }
 
 .indispensable {
@@ -48,6 +49,11 @@
 .select-bow {
   width: 150px;
   height: 25px;
+  border-radius: 3px;
+}
+
+.img-file {
+  border: none;
 }
 
 .review-btn-contents {
