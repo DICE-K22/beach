@@ -6,6 +6,8 @@ class CommentsController < ApplicationController
     @user = current_user.username
     if @comment.save
       ActionCable.server.broadcast 'comment_channel', user: @user, content: @comment, time: @time
+    else
+      render 'reviews/show'
     end
   end
 
