@@ -8,4 +8,7 @@ class User < ApplicationRecord
     validates :username, uniqueness: true
     validates :country
   end
+
+  has_many :reviews
+  has_many :comments
 end

@@ -18,7 +18,7 @@ class CreateReviews < ActiveRecord::Migration[6.0]
       t.integer    :toilet_id,           null: false
       t.integer    :shower_id,           null: false
       t.integer    :recommended_id,      null: false
-      t.integer    :user_id            
+      t.references :user,                null: false, foreign_key: true     
       t.timestamps
     end
   end
