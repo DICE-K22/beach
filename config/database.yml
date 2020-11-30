@@ -51,5 +51,5 @@ production:
   <<: *default
   database: beach_production
   username: root
-  password: <%= ENV['BEACH_DATABASE_PASSWORD'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
