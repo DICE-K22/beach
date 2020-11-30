@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: beach_production
-  username: beach
+  username: root
   password: <%= ENV['BEACH_DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
